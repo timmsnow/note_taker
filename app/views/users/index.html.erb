@@ -1,0 +1,16 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<div class="center-container">
+<table>
+  <tbody>
+<% @users.each do |user| %>
+      <tr>
+        <td>Username: <%= user.name %></td>
+        <td>Email: <%= user.email %></td>
+      </tr>
+    <% end %>
+      </tbody>
+      </table>
+    </div>
+

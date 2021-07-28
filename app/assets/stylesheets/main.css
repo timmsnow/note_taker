@@ -1,3 +1,8 @@
 .center {
   text-align: center;
 }
+
+.center-container {
+  display: flex;
+  justify-content: center;
+}

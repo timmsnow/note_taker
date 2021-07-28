@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root   'static_pages#home'
+  get    '/signup',  to: 'users#new'
 
   # EXAMPLE HTML ROUTE
   # get "/photos" => "photos#index"
@@ -24,4 +25,7 @@ Rails.application.routes.draw do
   patch "/categories/:id" => "categories#update"
   delete "/categories/:id" => "categories#destroy"
   # end
+
+  resources :account_activations, only: [:edit]
+
 end
