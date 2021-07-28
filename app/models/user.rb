@@ -48,6 +48,7 @@ class User < ApplicationRecord
   end
 
 
+
   # Sets the password reset attributes.
   def create_reset_digest
     self.reset_token = User.new_token

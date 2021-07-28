@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
   #   end
   # end
 
-  # include SessionsHelper
+  include SessionsHelper
 
   private
 
