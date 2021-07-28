@@ -1,0 +1,19 @@
+<h1> <%= @note.title %>
+</h1>
+
+<div class="wrapper">
+  <div class="row">
+   <h4> OWNER </h4>
+    <h4>NOTE </h4>
+    <h4>FINISH DATE </h4>
+ </div>
+ <div class="row">
+        <p class="column"><%= @note.user.name %></p>
+        <p class="column"><%= @note.content %></p>
+        <p class="column"><%= @note.resolution_date %></p>
+  </div>
+<div>
+
+<div class="center-container">
+<%= button_to "delete", @note, :method => :delete %>
+</div>

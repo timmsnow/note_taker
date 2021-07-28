@@ -1,13 +1,13 @@
 class NotesController < ApplicationController
   def index
-    notes = Note.all
-    render json: notes
+    @notes = Note.all
+    # render json: notes
   end
 
   def show
     note_id = params[:id]
-    note = Note.find(note_id)
-    render json: note
+    @note = Note.find(note_id)
+    # render json: note
   end
 
   def create
@@ -47,7 +47,8 @@ class NotesController < ApplicationController
     note_id = params[:id]
     note = Note.find(note_id)
     note.destroy
+    redirect_to notes_url
 
-    render json: { message: "note successfully deleted" }
+    # render json: { message: "note successfully deleted" }
   end
 end

@@ -1,0 +1,19 @@
+<% provide(:title, 'All notes') %>
+<h1>All notes</h1>
+
+<div class="wrapper-index">
+  
+    <h4>TITLE</h4>
+    <h4>OWNER</h4>
+    <h4></h4> 
+
+ 
+      <% @notes.each do |note| %>
+    
+        <p><%= link_to note.title, note %></p>
+        <p><%= note.user.name %></p>
+        <%= button_to "delete", note, :method => :delete %>
+   
+      <% end %>
+    
+</div>
