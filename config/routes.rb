@@ -9,8 +9,7 @@ Rails.application.routes.draw do
 
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   # namespace :api do
-  post "/sessions" => "sessions#create"
-
+  resources :notes
   get "/users" => "users#index"
   post "/users" => "users#create"
   get "/users/:id" => "users#show"
@@ -28,7 +27,6 @@ Rails.application.routes.draw do
   delete "/categories/:id" => "categories#destroy"
   # end
 
-  resources :account_activations, only: [:edit]
-  resources :notes,       only: [:index, :create, :destroy, :update]
+  # resources :account_activations, only: [:edit]
 
 end

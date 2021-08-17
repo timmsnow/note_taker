@@ -1,19 +1,24 @@
 <h1> <%= @note.title %>
 </h1>
+<p>Note Taken: <%= @note.created_at %></p>
 
-<div class="wrapper">
+<div class="jumbotron m-3">
   <div class="row">
-   <h4> OWNER </h4>
     <h4>NOTE </h4>
-    <h4>FINISH DATE </h4>
  </div>
  <div class="row">
-        <p class="column"><%= @note.user.name %></p>
-        <p class="column"><%= @note.content %></p>
-        <p class="column"><%= @note.resolution_date %></p>
+        <p class="col-8"><%= @note.content %></p>
+  <div class="col-2 center-container">
+    <%= button_to "delete", @note, :method => :delete %>
+  </div>
   </div>
 <div>
 
-<div class="center-container">
-<%= button_to "delete", @note, :method => :delete %>
+
+
+<p>Finish By: <%= @note.resolution_date %></p>
+
+ <div class="center">
+  <%= link_to 'Edit', edit_note_path(@note), class:"btn btn-primary"%>
+  <%= link_to 'Back', notes_path, class:"btn btn-secondary"%>
 </div>

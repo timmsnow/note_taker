@@ -1,13 +1,16 @@
 class NotesController < ApplicationController
   def index
     @notes = Note.all
-    # render json: notes
   end
 
   def show
     note_id = params[:id]
     @note = Note.find(note_id)
     # render json: note
+  end
+
+  def new
+    @note = Note.new
   end
 
   def create
@@ -19,7 +22,7 @@ class NotesController < ApplicationController
     )
     if current_user
       if note.save
-        render json: note
+        render @note
       else
         render json: { errors: note.errors.full_messages }, status: :unprocessable_entity
       end

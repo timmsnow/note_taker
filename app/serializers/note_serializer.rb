@@ -1,5 +1,5 @@
 class NoteSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :title, :content, :resolution_date
+  attributes :id, :user_id, :title, :content, :resolution_date, :todos
 
   belongs_to :user
   has_many :note_categories
