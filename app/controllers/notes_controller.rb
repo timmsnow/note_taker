@@ -14,6 +14,7 @@ class NotesController < ApplicationController
   end
 
   def create
+    puts current_user
     note = Note.new(
       title: params[:title],
       content: params[:content],
@@ -22,7 +23,7 @@ class NotesController < ApplicationController
     )
     if current_user
       if note.save
-        render @note
+        render json: note
       else
         render json: { errors: note.errors.full_messages }, status: :unprocessable_entity
       end

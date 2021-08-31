@@ -23,14 +23,14 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_url
     else
-      render 'new'
+      render json: { errors: @user.errors.full_messages }, status: :bad_request
     end
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.permit(:name, :email, :password,
                                    :password_confirmation)
     end
 
